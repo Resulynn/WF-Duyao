@@ -2,11 +2,13 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
 }
 
 body{
     overflow-x: hidden;
 }
+
 
 .bg-img{
     z-index: -1;
@@ -15,12 +17,36 @@ body{
     filter:brightness(50%);
     overflow-y: hidden;
     background-attachment: fixed;
-    height: 100%;
+ 
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+}
+
+
+.card{
+    border: 1px #c0c0c0 solid;
+    border-radius: 0%;
+    background: rgba(104, 104, 104, 0.226); 
+    backdrop-filter: blur(10px);
+}
+.form-control:focus, .form-control:active {
+    background: transparent;
+    color: silver;
     
 }
+.form-control{
+    background: none;
+    color: silver;
+}
+.card-header{
+    color:#c0c0c0; 
+    border-bottom:1px  #c0c0c0 solid;
+}
+.card-body{
+    color:#c0c0c0;
+}
+
+
 
 nav{
     display: flex;
@@ -31,7 +57,7 @@ nav{
 }
 
 .logo{
-    color: silver;
+    color: #c0c0c0;
     letter-spacing: 6px;
     font-size: 35px;
     font-family: 'Libre Franklin', sans-serif;
