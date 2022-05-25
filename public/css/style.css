@@ -1,0 +1,283 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.bg-img{
+    z-index: -1;
+    position: fixed;
+    background-size: cover;
+    filter:brightness(50%);
+    overflow-y: hidden;
+    background-attachment: fixed;
+    
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
+    min-height: 7vh;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.logo{
+    color: silver;
+    letter-spacing: 6px;
+    font-size: 35px;
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+.nav-links{
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+
+.nav-links li{
+    list-style: none;
+}
+
+.nav-links a{
+    color:silver;
+    text-decoration: none;
+    letter-spacing: 4px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.burger{
+    display:none;
+    cursor: pointer;
+}
+
+.burger div{
+    width: 25px;
+    height: 2px;
+    background-color:silver;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+.nav-active{
+    transform: translate(0%);
+}
+
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+
+.toggle .line2{
+    opacity: 0;
+}
+
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+
+.quote{
+    margin-top: 17vw;
+    margin-left:70vw;
+
+    display: flex;
+    line-height: 70px;
+    letter-spacing: 10px;
+    color: rgb(199, 199, 199);
+    font-size: 70px;
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+.d-flex img{
+    margin-top:20px;
+    width: 100%;
+}
+.d-flex{
+    margin-top:20vw;
+    background-color: #eceddf;
+}
+.d-flex .btn{
+    color:#eceddf;
+    background-color: #212121;
+}
+.text{
+    margin-top:20vw;
+    width: 60%;
+    text-align: center;
+    font-family: 'Libre Franklin', sans-serif;
+    letter-spacing: 7px;
+    COLOR:#212121
+}
+
+.section2 .btn{
+    color:#212121;
+    background-color: #eceddf;
+}
+.section2 .d-flex{
+    margin-top:0px;
+    background-color: #212121;
+}
+.section2 img{
+    margin-top:0px;
+}
+.section2 .text{
+    color: #eceddf;
+    margin-top:17vw;
+}
+
+/* largo seies */
+.quote2{
+    margin-top: 20vw;
+    margin-left: 10vw;
+    width: 53%;
+
+    display: flex;
+    line-height: 70px;
+    letter-spacing: 10px;
+    color: rgb(199, 199, 199);
+    font-size: 70px;
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+.prodHead{
+    margin-top: 25vw;
+    background-color: #eceddf;
+    display: flex;
+}
+
+.prodHead h1{
+    margin: 10px auto 0px auto;
+    letter-spacing: 10px;
+    color:#212121;
+    font-size: 50px;
+    bottom: 0px;
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+.prodDesc{
+    background-color: #eceddf;
+    display: flex;
+
+}
+
+.prodDesc p{
+    font-size: 12px;
+    font-family: 'Libre Franklin', sans-serif;
+    white-space: pre-line;
+    letter-spacing: 3px;
+    margin:  0px 0px 0px 3.2vw;
+}
+.lrgPullover .img2nd{ 
+    width:70%;
+}
+
+.lrgPullover .d-flex{
+    margin-top:0px;
+}
+
+.lrgPullover{
+    margin-bottom:0px;
+}
+.prodHead2{
+    margin-top:0px;
+    background-color: #eceddf;
+    display: flex;
+}
+
+.prodHead2 h1{
+    margin: 30px auto 0px auto;
+    letter-spacing: 10px;
+    color:#212121;
+    font-size: 50px;
+    bottom: 0px;
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+
+/*segue*/
+.prodDesc1{
+    background-color:#212121;
+    display: flex;
+
+}
+.prodDesc1 p{
+    color: #eceddf;
+    font-size: 12px;
+    font-family: 'Libre Franklin', sans-serif;
+    white-space: pre-line;
+    letter-spacing: 3px;
+    margin:  0px 0px 0px 3.2vw;
+}
+
+.segPullover img{
+    height:100%;
+}
+.segPullover .d-flex{
+    margin-bottom: 0px;
+    margin-top:0px;
+    background-color: #212121;
+}
+
+.prodHead3{
+    margin-top:50vw;
+    background-color:#212121;
+    display: flex;
+}
+.prodHead4{
+    margin-top:0vw;
+    background-color:#212121;
+    display: flex;
+}
+.prodHead4 h1{
+    margin: 30px auto 0px auto;
+    letter-spacing: 10px;
+    color:#eceddf;
+    font-size: 50px;
+    bottom: 0px;
+    font-family: 'Libre Franklin', sans-serif;
+}
+.prodHead3 h1{
+    margin: 30px auto 0px auto;
+    letter-spacing: 10px;
+    color:#eceddf;
+    font-size: 50px;
+    bottom: 0px;
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+/* about us */
+
+.aboutus{
+    margin-top: 30vw;
+}
+.aboutus h1{
+    margin: 30px auto 0px auto;
+    letter-spacing: 10px;
+    color:#212121;
+    font-size: 50px;
+    bottom: 0px;
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+.aboutus p{
+    color: #212121;
+    text-align: justify;
+    font-size: 12px;
+    font-family: 'Libre Franklin', sans-serif;
+    white-space: pre-line;
+    letter-spacing: 3px;
+    margin:  0px 0px 0px 3.2vw;
+
+}
+
+
+
+.boardImage{
+    object-fit: cover;
+    width: 300px;
+    height: 300px;
+}
