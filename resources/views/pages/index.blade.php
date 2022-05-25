@@ -1,12 +1,12 @@
 @extends('layout.app')
 
-    @section('bg')
+@section('bg')
     <img src="assets/bg.jpg" class="bg-img">
-    @endsection
-
+@endsection
     @section('content')
 
     <div class="quote">
+       
         "BE HOME
         LIKE NOWHERE
         ELSE."

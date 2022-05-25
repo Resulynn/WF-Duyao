@@ -21,3 +21,11 @@ Route::get('/segue','App\Http\Controllers\PagesController@segue');
 
 Route::resource('/blog','App\Http\Controllers\BlogController');
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
