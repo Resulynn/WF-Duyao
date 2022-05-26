@@ -1,8 +1,9 @@
-<nav>
+@extends('layout.app')
+<nav class="sticky-top">
     <div class="logo">
-        <p>NO / WEAR.
-        <p>
+      <h1>NO/WEAR</h1>
     </div>
+    <div class="">
     <ul class="nav-links">
         <li class="nav-item">
             <a class="nav-link" href="/index">Home.</a>
@@ -52,4 +53,6 @@
             @endguest
         
     </ul>
+    </div>
+   
 </nav>

@@ -1,8 +1,10 @@
+
 *{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
     font-family: 'M PLUS Rounded 1c', sans-serif;
+   
 }
 
 body{
@@ -49,36 +51,46 @@ body{
 
 
 nav{
-    display: flex;
-    justify-content: space-around;
-    align-items:center;
-    min-height: 7vh;
-    font-family: 'M PLUS Rounded 1c', sans-serif;
+  display: flex;
+ align-items: center;
+ 
+    background: #8f8f8f33;
+    backdrop-filter: blur(6px);
+
 }
 
 .logo{
     color: #c0c0c0;
-    letter-spacing: 6px;
-    font-size: 35px;
-    font-family: 'Libre Franklin', sans-serif;
+    width: 100%;
+   padding-left: 50px;
+  padding-top: 5px;
+    display: flex;
+    letter-spacing: 5px;
+   
+   
 }
 
 .nav-links{
     display: flex;
-    justify-content: space-around;
-    width: 30%;
+   padding-top: 10px;
+   
 }
 
 .nav-links li{
     list-style: none;
+
 }
 
 .nav-links a{
-    color:silver;
+    color:rgb(0, 0, 0);
     text-decoration: none;
     letter-spacing: 4px;
     font-weight: bold;
     font-size: 13px;
+}
+
+.nav-links a:hover{
+    color:rgb(255, 255, 255);
 }
 
 .burger{
@@ -119,7 +131,7 @@ nav{
     letter-spacing: 10px;
     color: rgb(199, 199, 199);
     font-size: 70px;
-    font-family: 'Libre Franklin', sans-serif;
+    
 }
 
 .d-flex img{
