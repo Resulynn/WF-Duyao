@@ -14,16 +14,15 @@ use App\Http\Controllers;
 */
 
 Route::get('/about','App\Http\Controllers\PagesController@about');
-Route::get('/index','App\Http\Controllers\PagesController@index');
-Route::get('/largo','App\Http\Controllers\PagesController@largo');
-Route::get('/segue','App\Http\Controllers\PagesController@segue');
-
-
+Route::resource('/largo','App\Http\Controllers\LargoPageController');
+Route::resource('/segue','App\Http\Controllers\SeguePageController');
+Route::get('/cart','App\Http\Controllers\PagesController@segue');
 Route::resource('/blog','App\Http\Controllers\BlogController');
+Route::resource('/largo/item','App\Http\Controllers\LargoPageController');
 
-
+Route::get('addtocart', [App\Http\Controllers\LargoPageController::class, 'addtocart']);
 Auth::routes();
-
+Route::get('/logout', [App\Http\Controllers\LogoutController::class, 'logout'])->name('logout.logout');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 

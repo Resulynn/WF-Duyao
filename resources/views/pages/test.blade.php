@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layout.app')
 
     @section('bg')
     <img src="assets/6.jpg" class="bg-img">

@@ -1,3 +1,4 @@
+
 @extends('layouts.app')
 
     @section('bg')
@@ -5,72 +6,39 @@
     @endsection
 
     @section('content')
+
     <div class="quote2">
         COMFORT:
         REIMAGINED.
     </div>
 
-
-
-    <div class="prodHead">
-        <h1>LARGO PULLOVER</h1>
-    </div>
-
-    <div class="prodDesc">
-        <p>100% cotton
-        Drop Shoulder Style 
-        One Size Fits All
-
-        Php 7,800.00
-        <p>
-    </div>
-
-    <div class="lrgPullover">
-        <div class="d-flex justify-content-around">
-            <div>
-                <img src="assets\4.jpg">
-            </div>
-        </div>
-        <div class="d-flex justify-content-around">
-            <div class="img2nd">
-                <img src="assets\5.jpg">
-            </div>
-        </div>
-    </div>
-
-
-
-    <div class="prodHead2">
-        <h1>KNITTED LARGO</h1>
-    </div>
-
-    <div class="prodDesc">
-        <p>100% cotton
-        Drop Shoulder Style 
-        One Size Fits All
-        Knitted
-
-        Php 9,800.00
-        <p>
-    </div>
-
-    <div class="lrgPullover">
-        <div class="d-flex justify-content-around">
-            <div class="img2nd">
-                <img src="assets\1.jpg">
-            </div>
-        </div>
-        <div class="d-flex justify-content-around">
-            <div>
-                <img src="assets\2.jpg">
-            </div>
-        </div>
-        <div class="d-flex justify-content-around">
-            <div class="img2nd">
-                <img src="assets\3.jpg">
-            </div>
-        </div>
-    </div>
+  
+@foreach($products as $prod)
+<div class="prodHead">
+    <h1><a href="/largo/item/{{$prod->product_id}}" style="text-decoration: none; color: #000000;">{{$prod->product_name}}</a></h1>
     
-    
-    @endsection
+</div>
+
+{{-- <div class="prodDesc">
+   
+    <p>{{$prod->product_desc}}
+        {{$prod->product_price}} Php
+    <p>
+</div> --}}
+<div class="lrgPullover">
+    <div class="d-flex justify-content-around">
+        <div>
+            <img src="{{$prod->img1st}}">
+        </div>
+    </div>
+    <div class="d-flex justify-content-around">
+        <div class="img2nd">
+            <img src="{{$prod->img2nd}}">
+        </div>
+    </div>
+</div>
+
+@endforeach
+
+   
+@endsection

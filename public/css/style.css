@@ -1,4 +1,4 @@
-
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css");
 *{
     margin: 0px;
     padding: 0px;
@@ -30,6 +30,7 @@ body{
     border-radius: 0%;
     background: rgba(104, 104, 104, 0.226); 
     backdrop-filter: blur(10px);
+    margin-top: 100px;
 }
 .form-control:focus, .form-control:active {
     background: transparent;
@@ -51,11 +52,13 @@ body{
 
 
 nav{
-  display: flex;
- align-items: center;
- 
-    background: #8f8f8f33;
-    backdrop-filter: blur(6px);
+
+display: flex;
+align-items: center;
+    background:#c7c7c73d;
+ backdrop-filter: blur(8px);
+
+  
 
 }
 
@@ -90,7 +93,7 @@ nav{
 }
 
 .nav-links a:hover{
-    color:rgb(255, 255, 255);
+    color:rgb(139, 139, 139);
 }
 
 .burger{
@@ -200,10 +203,13 @@ nav{
     font-family: 'Libre Franklin', sans-serif;
 }
 
+
+
 .prodDesc{
     background-color: #eceddf;
     display: flex;
-
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .prodDesc p{

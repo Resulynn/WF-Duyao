@@ -4,13 +4,6 @@
     <img src="assets/bg.jpg" class="bg-img">
 @endsection
     @section('content')
-
-    <div class="quote">
-       
-        "BE HOME
-        LIKE NOWHERE
-        ELSE."
-    </div>
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -30,6 +23,12 @@
             </div>
         </div>
     </div>
+    <div class="quote">
+        "BE HOME
+        LIKE NOWHERE
+        ELSE."
+    </div>
+    
     <div class="d-flex justify-content-around">
 
         <div>

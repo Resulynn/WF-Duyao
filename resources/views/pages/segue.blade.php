@@ -5,57 +5,24 @@
     @endsection
 
     @section('content')
-
+    @foreach($products as $prod)
     <div class="prodHead3">
-    <h1>HOODIE ' NOIR '</h1>
-</div>
+        <h1><a href="/largo/item/{{$prod->product_id}}" style="text-decoration: none; color: #ffffff;">{{$prod->product_name}}</a></h1>
+    </div>
 
-<div class="prodDesc1">
-    <p>100% cotton
-    Drop Shoulder Style 
-    One Size Fits All
-
-    Php 11,300.00
-    <p>
-</div>
 
 <div class="segPullover">
     <div class="d-flex justify-content-around">
         <div>
-            <img src="assets/b2.jpg">
+            <img src="{{$prod->img1st}}">
         </div>
     </div>
     <div class="d-flex justify-content-around">
         <div>
-            <img src="assets/b3.jpg">
+            <img src="{{$prod->img2nd}}">
         </div>
     </div>
 </div>
-
-<div class="prodHead4">
-    <h1>HOODIE ' BLANC '</h1>
-</div>
-
-<div class="prodDesc1">
-    <p>100% cotton
-    Drop Shoulder Style 
-    One Size Fits All
-
-    Php 10,800.00
-    <p>
-</div>
-
-<div class="segPullover">
-    <div class="d-flex justify-content-around">
-        <div>
-            <img src="assets/b4.jpg">
-        </div>
-    </div>
-    <div class="d-flex justify-content-around">
-        <div>
-            <img src="assets/b5.jpg">
-        </div>
-    </div>
-</div>
+@endforeach
     
-    @endsection
+@endsection
