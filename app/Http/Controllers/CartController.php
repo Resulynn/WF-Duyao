@@ -1,13 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
-use App\Models\Cart;
-use App\Models\Products;
-use App\Models\Users;
 use Illuminate\Support\Facades\Auth;
-class LargoPageController extends Controller
+use App\Models\Cart;
+
+class CartController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,9 +14,7 @@ class LargoPageController extends Controller
      */
     public function index()
     {
-        $products = Products::where('product_category','=','largo')->get();
-       
-        return view('pages.largo')->with(compact('products','total'));
+        
     }
 
     /**
@@ -50,9 +46,16 @@ class LargoPageController extends Controller
      */
     public function show($id)
     {
-        $product = Products::find($id);
-        $products = Products::where('product_category','=','largo')->get();
-        return view('pages.item_detail')->with(compact('product','products'));
+        $products = Cart::join('products','cart.product_id','=','products.id')
+        ->where('cart.user_id', Auth::user()->id)
+        ->select('products.*')
+        ->get();
+
+        $total = Cart::join('products','cart.product_id','=','products.id')
+        ->where('cart.user_id', Auth::user()->id)
+        ->sum('products.product_price');
+
+        return view('pages.cart')->with(compact('products','total'));
     }
 
     /**
@@ -88,6 +91,19 @@ class LargoPageController extends Controller
     {
         //
     }
-
- 
+    function addtocart(Request $request){
+        $id = Auth::id();
+   
+          $cart = new Cart;
+          $cart->product_id=$request->product_id;
+          $cart->user_id=$id;
+          $cart->save();
+   
+          return redirect('/largo');
+       }
+   
+        static function cartitem(){
+           $user_id = Auth::id();
+           return Cart::where('user_id',$user_id)->count();
+       }
 }

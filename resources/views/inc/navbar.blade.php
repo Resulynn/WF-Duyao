@@ -1,7 +1,8 @@
 @php
-    use App\Http\Controllers\LargoPageController;
-    $items = LargoPageController::cartitem();
+    use App\Http\Controllers\CartController;
+    $items = CartController::cartitem();
 @endphp
+
 <nav class="sticky-top">
     <div class="logo">
       <h1>NO/WEAR</h1>
@@ -37,7 +38,7 @@
                 @endif
             @else
                 <li class="nav-item">
-                    <a class="nav-link" href="">({{$items}})Cart.</a>
+                    <a class="nav-link" href="/cart/{{Auth::user()->id}}">({{$items}})Cart.</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
