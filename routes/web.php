@@ -21,7 +21,9 @@ Route::resource('/blog','App\Http\Controllers\BlogController');
 Route::resource('/largo/item','App\Http\Controllers\LargoPageController');
 
 Route::get('addtocart', [App\Http\Controllers\CartController::class, 'addtocart']);
+
 Auth::routes();
+
 Route::get('/logout', [App\Http\Controllers\LogoutController::class, 'logout'])->name('logout.logout');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

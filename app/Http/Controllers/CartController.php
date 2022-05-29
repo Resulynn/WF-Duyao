@@ -51,11 +51,14 @@ class CartController extends Controller
         ->select('products.*')
         ->get();
 
+
         $total = Cart::join('products','cart.product_id','=','products.id')
         ->where('cart.user_id', Auth::user()->id)
         ->sum('products.product_price');
 
-        return view('pages.cart')->with(compact('products','total'));
+        $status = Cart::where('user_id', Auth::user()->id)->get();
+
+        return view('pages.cart')->with(compact('products','total','status'));
     }
 
     /**
@@ -89,8 +92,15 @@ class CartController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $del=Cart::where('user_id', Auth::user()->id)
+        ->where('product_id', $id)
+        ->first();
+        
+        $del->delete();
+        return redirect('/home');
+        
     }
+
     function addtocart(Request $request){
         $id = Auth::id();
    
@@ -102,7 +112,7 @@ class CartController extends Controller
           return redirect('/largo');
        }
    
-        static function cartitem(){
+    static function cartitem(){
            $user_id = Auth::id();
            return Cart::where('user_id',$user_id)->count();
        }

@@ -14,12 +14,29 @@
     <div class="col">
         {{$item->product_name}}<br>
         Price: {{$item->product_price}}
-        <form action="/checkout" method="GET">
+<br>
+
+        Status:
+        @if ($item->status==1)
+            <p class='text-danger'>To pay</p>
+        @endif
+ 
+        {{-- <form action="/checkout" method="GET">
             <button class="btn btn-danger mt-2 " style="border-radius: 0%;">
                 <i class="bi bi-trash" style="font-size: 18px;"></i>
                 Remove
             </button>
-        </form>
+        </form> --}}
+
+        {!! Form::open(['action'=>['App\Http\Controllers\CartController@destroy',$item->id],
+                            'method'=>'POST'])!!}
+        {{ Form::hidden('_method','DELETE') }}
+            <button class="btn btn-danger mt-2 " style="border-radius: 0%;">
+            <i class="bi bi-trash" style="font-size: 18px;"></i>
+            Remove
+            </button>
+        {!! Form::close() !!} 
+        
     </div>
 </div>
 <div class="px-3 w-100" style="color: white;">

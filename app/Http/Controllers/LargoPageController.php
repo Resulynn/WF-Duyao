@@ -18,7 +18,7 @@ class LargoPageController extends Controller
     {
         $products = Products::where('product_category','=','largo')->get();
        
-        return view('pages.largo')->with(compact('products','total'));
+        return view('pages.largo')->with(compact('products','products'));
     }
 
     /**
