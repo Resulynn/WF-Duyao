@@ -20,14 +20,10 @@
         @if ($item->status==1)
             <p class='text-danger'>To pay</p>
         @endif
- 
-        {{-- <form action="/checkout" method="GET">
-            <button class="btn btn-danger mt-2 " style="border-radius: 0%;">
-                <i class="bi bi-trash" style="font-size: 18px;"></i>
-                Remove
-            </button>
-        </form> --}}
-
+        @if ($item->status==2)
+        <p class='text-success'>Paid</p>
+        @endif
+      
         {!! Form::open(['action'=>['App\Http\Controllers\CartController@destroy',$item->id],
                             'method'=>'POST'])!!}
         {{ Form::hidden('_method','DELETE') }}
@@ -46,11 +42,18 @@
 
 <div class="col pe-5 w-100" style="text-align: end; color:white;">
 Total: {{$total}} Php
-<form action="/checkout" method="GET">
+{{-- <form action="/checkout" method="GET">
     <button class="btn btn-success mt-2 " style="border-radius: 0%;">
         <i class="bi bi-cart-check" style="font-size: 18px;"></i>
        Checkout
     </button>
-</form>
+</form> --}}
+{!! Form::open(['action'=>['App\Http\Controllers\chkoutController@chckout'],
+'method'=>'POST'])!!}
+    <button class="btn btn-success mt-2 " style="border-radius: 0%;">
+        <i class="bi bi-cart-check" style="font-size: 18px;"></i>
+    Checkout
+    </button>
+{!! Form::close() !!} 
 </div>
 @endsection

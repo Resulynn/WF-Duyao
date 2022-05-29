@@ -27,4 +27,6 @@ Auth::routes();
 Route::get('/logout', [App\Http\Controllers\LogoutController::class, 'logout'])->name('logout.logout');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+Route::post('/checkouts','App\Http\Controllers\chkoutController@chckout');
+
 

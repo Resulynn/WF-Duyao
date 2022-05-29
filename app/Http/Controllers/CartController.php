@@ -46,9 +46,10 @@ class CartController extends Controller
      */
     public function show($id)
     {
-        $products = Cart::join('products','cart.product_id','=','products.id')
+        $products = Cart::leftjoin('products','cart.product_id','=','products.id')
         ->where('cart.user_id', Auth::user()->id)
-        ->select('products.*')
+        ->select('cart.status','products.*')
+        // ->select('products.*')
         ->get();
 
 
