@@ -31,9 +31,25 @@
 
 <body>
   @include('inc.navbar')
-        
+      
         @yield('bg')
         <main class="py-4">
+            @if(Session::has('error'))
+                <div class="d-flex w-100 justify-content-center" style="background: none; margin:0%;">
+                    <div class="alert alert-danger w-50 text-center">
+                        {{Session::get('error')}}
+                    </div>
+                </div>
+            @endif
+
+            @if(Session::has('success'))
+            <div class="d-flex w-100 justify-content-center" style="background: none; margin:0%;">
+                <div class="alert alert-success w-50 text-center">
+                    {{Session::get('success')}}
+                </div>
+            </div>
+        @endif
+            
             @yield('content')
         </main>
     

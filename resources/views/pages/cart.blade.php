@@ -4,8 +4,12 @@
     <img src="/assets/6.jpg" class="bg-img">
 @endsection
 @section('content')
-<div class="row ps-3 w-25 " style="color:white; overflow:auto;">
-    @foreach ($products as $item)
+<div class="px-3 w-100" style="color: white;">
+    <hr>
+</div>
+@foreach ($products as $item)
+
+<div class="row ps-3 w-25 " style="color:white;">
     <div class="col pb-3">
          <img src="/{{$item->img1st}}" width="120px" height="120px" 
             style="object-fit: cover;" 
@@ -15,15 +19,14 @@
         {{$item->product_name}}<br>
         Price: {{$item->product_price}}
 <br>
-
-        Status:
+       
         @if ($item->status==1)
-            <p class='text-danger'>To pay</p>
+           <b><p class='text-danger'>To pay</p></b>
         @endif
         @if ($item->status==2)
-        <p class='text-success'>Paid</p>
+        <b><p class='text-success'>Paid</p></b>
         @endif
-      
+       
         {!! Form::open(['action'=>['App\Http\Controllers\CartController@destroy',$item->id],
                             'method'=>'POST'])!!}
         {{ Form::hidden('_method','DELETE') }}
@@ -32,7 +35,6 @@
             Remove
             </button>
         {!! Form::close() !!} 
-        
     </div>
 </div>
 <div class="px-3 w-100" style="color: white;">
@@ -40,17 +42,14 @@
 </div>
 @endforeach
 
-<div class="col pe-5 w-100" style="text-align: end; color:white;">
+<div class="col pe-5 w-100 ms-4 " style=" color:white;">
 Total: {{$total}} Php
-{{-- <form action="/checkout" method="GET">
-    <button class="btn btn-success mt-2 " style="border-radius: 0%;">
-        <i class="bi bi-cart-check" style="font-size: 18px;"></i>
-       Checkout
-    </button>
-</form> --}}
+
 {!! Form::open(['action'=>['App\Http\Controllers\chkoutController@chckout'],
 'method'=>'POST'])!!}
-    <button class="btn btn-success mt-2 " style="border-radius: 0%;">
+
+    {!! Form::number('amount', '', ['class'=>'form-control mt-3 w-25 ', 'placeholder'=>'Input Amount','required']) !!} <br>
+    <button class="btn btn-success  " style="border-radius: 0%;">
         <i class="bi bi-cart-check" style="font-size: 18px;"></i>
     Checkout
     </button>

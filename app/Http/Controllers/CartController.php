@@ -49,12 +49,12 @@ class CartController extends Controller
         $products = Cart::leftjoin('products','cart.product_id','=','products.id')
         ->where('cart.user_id', Auth::user()->id)
         ->select('cart.status','products.*')
-        // ->select('products.*')
         ->get();
 
 
         $total = Cart::join('products','cart.product_id','=','products.id')
         ->where('cart.user_id', Auth::user()->id)
+        ->where('cart.status', 1)
         ->sum('products.product_price');
 
         $status = Cart::where('user_id', Auth::user()->id)->get();
@@ -98,7 +98,7 @@ class CartController extends Controller
         ->first();
         
         $del->delete();
-        return redirect('/home');
+        return back();
         
     }
 
@@ -110,11 +110,11 @@ class CartController extends Controller
           $cart->user_id=$id;
           $cart->save();
    
-          return redirect('/largo');
+          return back();
        }
    
     static function cartitem(){
            $user_id = Auth::id();
-           return Cart::where('user_id',$user_id)->count();
+           return Cart::where('user_id',$user_id)->where('status','1')->count();
        }
 }
