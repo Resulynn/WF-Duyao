@@ -115,6 +115,6 @@ class CartController extends Controller
    
     static function cartitem(){
            $user_id = Auth::id();
-           return Cart::where('user_id',$user_id)->where('status','1')->count();
+           return Cart::where('user_id',$user_id)->count();
        }
 }
