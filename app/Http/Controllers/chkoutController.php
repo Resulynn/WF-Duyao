@@ -11,6 +11,7 @@ use Session;
 class chkoutController extends Controller
 {
     public function chckout(Request $request){
+        
         $amt = $request->amount;
         $total = Cart::join('products','cart.product_id','=','products.id')
         ->where('cart.user_id', Auth::user()->id)
@@ -28,7 +29,7 @@ class chkoutController extends Controller
             $txn->total = $total;
             $txn->amt_paid = $amt;
             $txn->save();
-            
+
         Cart::where('user_id', Auth::user()->id)
         ->update (['status'=>'2']);
 

@@ -49,10 +49,24 @@ Total: {{$total}} Php
 'method'=>'POST'])!!}
 
     {!! Form::number('amount', '', ['class'=>'form-control mt-3 w-25 ', 'placeholder'=>'Input Amount','required']) !!} <br>
-    <button class="btn btn-success  " style="border-radius: 0%;">
+
+@if($total == 0)
+    <button class="btn btn-success  " style="border-radius: 0%;" disabled>
+            <i class="bi bi-cart-check" style="font-size: 18px;"></i>
+        Checkout
+        </button> 
+ @else
+     <button class="btn btn-success  " style="border-radius: 0%;">
         <i class="bi bi-cart-check" style="font-size: 18px;"></i>
-    Checkout
-    </button>
+         Checkout
+    </button>  
+ @endif 
+  
+
+
+       
+   
+
 {!! Form::close() !!} 
 </div>
 @endsection
