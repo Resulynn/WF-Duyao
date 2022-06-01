@@ -62,11 +62,6 @@ Total: {{$total}} Php
     </button>  
  @endif 
   
-
-
-       
-   
-
 {!! Form::close() !!} 
 </div>
 @endsection

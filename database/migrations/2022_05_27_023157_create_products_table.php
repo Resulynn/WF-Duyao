@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('product_category');
             $table->string('product_desc');
             $table->double('product_price');
+            $table->string('img1st');
+            $table->string('img2nd');
             $table->timestamps();
         });
     }
