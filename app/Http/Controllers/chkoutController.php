@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Cart;
+use App\Models\Transactions;
 use Session;
 
 class chkoutController extends Controller
@@ -21,6 +22,13 @@ class chkoutController extends Controller
             return back()->withInput();
         }
         else{
+        
+            $txn = new Transactions();
+            $txn->user_id = Auth::user()->id;
+            $txn->total = $total;
+            $txn->amt_paid = $amt;
+            $txn->save();
+            
         Cart::where('user_id', Auth::user()->id)
         ->update (['status'=>'2']);
 
@@ -30,6 +38,8 @@ class chkoutController extends Controller
 
        
     }
+
+    
 
 
 }
